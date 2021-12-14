@@ -1,3 +1,5 @@
+rm -d -f -r obj
+rm -d -f -r bin
 mkdir obj
 mkdir bin
 
