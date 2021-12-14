@@ -15,7 +15,6 @@ print_string:
 ; Prints a string and a newline
 ; bx Address of the string
 println_string:
-	mov ah, 0xe
 	call print_string
 	mov al, 0xA ; Print a carriage return
 	int 0x10
