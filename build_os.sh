@@ -1,3 +1,6 @@
+mkdir obj
+mkdir bin
+
 echo "Compiling kernel..."
 i386-elf-gcc -ffreestanding -m32 -g -c "src/kernel.cpp" -o "obj/kernel.o"
 echo "Compiled kernel!"
@@ -7,7 +10,7 @@ nasm "src/kernel_entry.asm" -f elf -o "obj/kernel_entry.o"
 echo "Assembled kernel_entry!"
 
 echo "Linking full kernel..."
-i386-elf-ld -o "bin/full_kernel.bin" -Ttext 0x1000 "obj/kernel_entry.o" "obj/kernel.o" --oformat binary --entry main 
+i386-elf-ld -o "bin/full_kernel.bin" -Ttext 0x1000 "obj/kernel_entry.o" "obj/kernel.o" --oformat binary --entry main
 echo "Linked full kernel!"
 
 echo "Assembling boot..."
