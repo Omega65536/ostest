@@ -28,8 +28,7 @@ void print_char(char c) {
 
 void print_string(char* string) {
     while (*string) {
-        print_char(*string);
-        string++;
+        print_char(*string++);
     }
 }
 
