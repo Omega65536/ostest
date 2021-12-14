@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include "terminal.cpp"
-#include "colors.h"
+#include "colors.cpp"
 
 extern "C" void main() {
     term_ctx.buffer = 0xb8000;
@@ -14,7 +14,7 @@ extern "C" void main() {
     set_foreground(BLACK);
     set_background(CYAN);
     //                   #=-                              654321--123456                              -=#
-    char banner_top[] = "[                              Welcome to OmegaOS                              ]\n\n";
+    char banner_top[] = "                               Welcome to OmegaOS                               \n\n";
     print_string(banner_top);
 
     set_foreground(WHITE);
