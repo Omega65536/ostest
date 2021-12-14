@@ -26,11 +26,30 @@ extern "C" void main() {
         }
         newline();
     }
+    newline();
 
     set_foreground(GREEN);
     set_background(BLACK);
-    char hello[] = "\nHello, world!";
+    char hello[] = "Hello, world!\n";
     print_string(hello);
+
+    return;
+
+    int i = 0;
+    while (true) {
+        for (int y = 0; y < term_ctx.height; y++) {
+            newline();
+            for (int x = 0; x < term_ctx.width; x++) {
+                i++;
+                set_foreground(i % 15 + 3);
+                set_background(i % 7);
+                term_ctx.x = x;
+                term_ctx.y = y;
+                print_char(i % 256);
+            }
+        }
+    }
+
 
     return;
 }
